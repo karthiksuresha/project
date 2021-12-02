@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+<head>
+  <meta charset="UTF-8">
+  <title>Train Ticket Reservation System</title>
+  <link type="text/css" th:href="@{\style.css}" rel="stylesheet">
+  <!--    Bootstrap link from webjars-->
+  <link type="text/css" rel="stylesheet" th:href="@{\webjars\bootstrap\4.3.1\css\bootstrap.css}">
+</head>
+<body>
+<!--Header Section-->
+<div class="menu-bar shadow">
+  <h2 class="heading"><img style="height:50px;" th:src="@{\trainTicket.png}">  &emsp; TRAIN TICKET RESERVATION</h2>
+  <ul>
+    <li></i><a href="administrator"><dt> HOME</dt></a></li>
+    <li></i><a href="update"><dt> UPDATE</dt></a></li>
+    <li></i><a href="addTrains"><dt> ADD NEW</dt></a></li>
+    <li class="active"></i><a href="bookings"><dt> BOOKINGS</dt></a></li>
+  </ul>
+</div><br>
+<!--Trains Table from Backend-->
+<table class="table-striped shadow" >
+  <thead>
+  <th>Train No</th>
+  <th>Train Name</th>
+  <th>Travel Date</th>
+  <th>PNR No</th>
+  </thead>
+  <tbody>
+  <tbody>
+    <tr><td>1001</td>
+      <td>Shatabdi Express</td>
+      <td>10/12/2021</td>
+      <td>BD_20211210_100</td>
+    </tr>
+    <tr><td>1003</td>
+      <td>Udyan Express</td>
+      <td>08/12/2021</td>
+      <td>BD_20211208_101</td>
+    </tr>
+    <tr><td>1006</td>
+      <td>Brindavan Express</td>
+      <td>15/12/2021</td>
+      <td>BD_20211215_102</td>
+    </tr>
+  </tbody>
+  </tbody>
+</table><br>
+
+</body>
+</html>

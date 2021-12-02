@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+<head>
+  <meta charset="UTF-8">
+  <title>Train Ticket Reservation System</title>
+  <link type="text/css" th:href="@{\style.css}" rel="stylesheet">
+  <!--    Bootstrap link from webjars-->
+  <link type="text/css" rel="stylesheet" th:href="@{\webjars\bootstrap\4.3.1\css\bootstrap.css}">
+  <style>
+      input[type=text] {
+        width: 250px;
+        margin: 25px 50px 10px 100px;
+        box-sizing: border-box;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+        background-color: white;
+        background-repeat: no-repeat;
+        padding: 12px 20px 12px 40px;
+        -webkit-transition: width 0.4s ease-in-out;
+        transition: width 0.4s ease-in-out;
+      }
+
+      input[type=text]:focus {
+        width: 85%;
+      }
+</style>
+</head>
+<body>
+<!--Header Section-->
+<div class="menu-bar shadow">
+  <h2 class="heading"><img style="height:50px;" th:src="@{\trainTicket.png}">  &emsp; TRAIN TICKET RESERVATION</h2>
+  <ul>
+    <li class="active"></i><a href="administrator"><dt> HOME</dt></a></li>
+    <li></i><a href="update"><dt> UPDATE</dt></a></li>
+    <li></i><a href="addTrains"><dt> ADD NEW</dt></a></li>
+    <li></i><a href="bookings"><dt> BOOKINGS</dt></a></li>
+  </ul>
+</div><br>
+<div class>
+  <form> <!--action=""-->
+      <input type="text" name="search" placeholder="Search..">
+  </form>
+</div><br>
+<!--Trains Table from Backend-->
+<table class="table-striped shadow" >
+  <thead>
+  <th>Train No</th>
+  <th>Train Name</th>
+  <th>Source</th>
+  <th>Destination</th>
+  <th>Price</th>
+  </thead>
+  <tbody>
+  <th:block th:each="train:${trainList}">
+    <tr class='clickable-row' th:data-href="@{update?(trainNo=${train.trainNo})}">
+      <td>[[${train.trainNo}]]</td>
+      <td>[[${train.trainName}]]</td>
+      <td>[[${train.source}]]</td>
+      <td>[[${train.destination}]]</td>
+      <td>[[${train.ticketPrice}]]</td>
+    </tr>
+  </th:block>
+  </tbody>
+</table><br>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta charset="UTF-8">
+    <title>Train Ticket Reservation System</title>
+    <link type="text/css" th:href="@{\style.css}" rel="stylesheet">
+    <!--    Bootstrap link from webjars-->
+    <link type="text/css" rel="stylesheet" th:href="@{\webjars\bootstrap\4.3.1\css\bootstrap.css}">
+</head>
+<body>
+<!--Header Section-->
+<div class="menu-bar shadow">
+    <h2 class="heading"><img style="height:50px;" th:src="@{\trainTicket.png}">  &emsp; TRAIN TICKET RESERVATION</h2>
+    <ul>
+        <li></i><a href="administrator"><dt> HOME</dt></a></li>
+        <li class="active"></i><a href="update"><dt> UPDATE</dt></a></li>
+        <li></i><a href="addTrains"><dt> ADD NEW</dt></a></li>
+        <li></i><a href="bookings"><dt> BOOKINGS</dt></a></li>
+    </ul>
+</div><br>
+<form >
+    <center>
+    <div class="container shadow">
+            <h3>Train Details</h3>
+            <table>
+                <tr>
+                    <td><label for="trainNo">Train No:</label></td>
+                    <td><input type="text" name="trainNo"   id="trainNo" class="form-control" required placeholder="Enter Train No"></td>
+                </tr>
+                <tr>
+                    <td><label for="trainName">Train Name:</label></td>
+                    <td><input type="text" name="trainName"   id="trainName" class="form-control" required placeholder="Enter Train Name"></td>
+                </tr>
+                <tr>
+                    <td><label for="source">Source:</label></td>
+                    <td><input type="text" name="source"   id="source" class="form-control" required placeholder="Enter Train source"></td>
+                </tr>
+                <tr>
+                    <td><label for="destination">Destination</label></td>
+                    <td><input type="text" name="destination"   id="destination" class="form-control" required placeholder="Enter Train Destination"></td>
+                </tr>
+                <tr>
+                    <td><label for="price">Price</label></td>
+                    <td><input type="text" name="price"   id="price" class="form-control" required placeholder="Enter Train price"></td>
+                </tr>
+            </table>
+    </div><br><br>
+    <!--        Dynamic Form Section -->
+    <div class="container shadow">
+        <tr>
+            <td><button type="submit" class="btn btn-success">Update</button></td>
+            <td><button type="submit" class="btn btn-danger">Delete</button></td></tr>
+    </div>
+  </center>
+</form><br>
+</body>
+</html>

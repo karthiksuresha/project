@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta charset="UTF-8">
+    <title>Train Ticket Reservation System</title>
+    <link type="text/css" th:href="@{\style.css}" rel="stylesheet">
+    <!--    Bootstrap link from webjars-->
+    <link type="text/css" rel="stylesheet" th:href="@{\webjars\bootstrap\4.3.1\css\bootstrap.css}">
+</head>
+<body>
+<!--Header Section-->
+<div class="menu-bar shadow">
+    <h2 class="heading"><img style="height:50px;" th:src="@{\trainTicket.png}">  &emsp; TRAIN TICKET RESERVATION</h2>
+    <ul>
+        <li class="active"></i><a href="index"><dt> LOGIN</dt></a></li>
+        <li></i><a href="register"><dt> REGISTER</dt></a></li>
+        <li></i><a href="admin"><dt> ADMIN</dt></a></li>
+    </ul>
+</div><br>
+<form th:action="@{verifyUser}" method="post"  >
+    <div class="container shadow">
+        <center>
+        <h3>User Credentials</h3>
+        <table>
+                    <tr>
+                        <td><label for="userName">User Name:</label></td>
+                        <td><input type="text" name="userName"   id="userName" class="form-control" required placeholder="Enter User Name"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="password">Password:</label></td>
+                        <td><input type="password" name="password"   id="password" class="form-control" required placeholder="Enter Password"></td>
+                    </tr>
+        </table>
+        </center>
+    </div><br><br>
+    <!--        Dynamic Form Section -->
+    <div class="container shadow">
+        <div id="content"></div><br>
+        <input type="submit" class="text-center btn-primary" id="submit">
+    </div>
+</form><br>
+</body>
+</html>
